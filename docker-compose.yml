@@ -5,7 +5,7 @@ services:
     container_name: wg-easy
     environment:
       # ОБЯЗАТЕЛЬНО: Впишите ваш публичный IP сервера
-      - WG_HOST=1.2.3.4
+      - WG_HOST=91.188.212.88
 
       # Пароль для входа в веб-интерфейс
       - PASSWORD='$2a$12$zq8rbLvC8gSIhF2FgNsA8eQPaZBZjWAHdbVUSElygCL9TUNjrFJdq'
