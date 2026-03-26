@@ -8,7 +8,7 @@ services:
       - WG_HOST=91.188.212.88
 
       # Пароль для входа в веб-интерфейс
-      - PASSWORD_HASH='$2a$12$zq8rbLvC8gSIhF2FgNsA8eQPaZBZjWAHdbVUSElygCL9TUNjrFJdq'
+      - PASSWORD_HASH='$2a$12$x0bFyJmVWAFbWYsXJx3H7OMYajksTsTlZC9jWO4baYZ49xKXUNkt6'
 
       # Опционально: порт для веб-панели (по умолчанию 51821)
       - PORT=51821
