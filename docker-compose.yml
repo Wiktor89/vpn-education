@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  wg-easy:
+    image: ghcr.io/wg-easy/wg-easy
+    container_name: wg-easy
+    environment:
+      # ОБЯЗАТЕЛЬНО: Впишите ваш публичный IP сервера
+      - WG_HOST=1.2.3.4
+
+      # Пароль для входа в веб-интерфейс
+      - PASSWORD='$2a$12$zq8rbLvC8gSIhF2FgNsA8eQPaZBZjWAHdbVUSElygCL9TUNjrFJdq'
+
+      # Опционально: порт для веб-панели (по умолчанию 51821)
+      - PORT=51821
+
+      # Опционально: порт для VPN трафика (по умолчанию 51820)
+      - WG_PORT=51820
+
+      # Опционально: DNS для клиентов (например, Google или Cloudflare)
+      - WG_DEFAULT_DNS=1.1.1.1,8.8.8.8
+
+      # Настройка подсети для VPN (обычно менять не нужно)
+      - WG_DEFAULT_ADDRESS=10.8.0.x
+    volumes:
+      - ./.wg-easy:/etc/wireguard
+    ports:
+      - "51820:51820/udp"
+      - "51821:51821/tcp"
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1
