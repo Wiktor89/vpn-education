@@ -5,7 +5,7 @@ services:
     restart: no
     ports:
       - "51821:51821/udp"
-    network_mode: "host"
+      - "443:443"
     volumes:
       - ./config/config.json:/etc/xray/config.json:ro
 
