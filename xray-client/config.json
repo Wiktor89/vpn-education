@@ -1,0 +1,36 @@
+{
+  "inbounds": [{
+    "port": 51821,
+    "listen": "127.0.0.1",
+    "protocol": "dokodemo-door",
+    "settings": {
+      "address": "127.0.0.1",
+      "network": "udp"
+    }
+  }],
+  "outbounds": [{
+    "protocol": "vless",
+    "settings": {
+      "vnext": [{
+        "address": "91.188.212.88",
+        "port": 443,
+        "users": [{
+          "id": "b0859222-a888-4294-bb98-094a5ff7cd12",
+          "encryption": "none",
+          "flow": "xtls-rprx-vision"
+        }]
+      }]
+    },
+    "streamSettings": {
+      "network": "tcp",
+      "security": "reality",
+      "realitySettings": {
+        "fingerprint": "chrome",
+        "serverName": "://microsoft.com",
+        "publicKey": "195MQ5684dWa75Ca2pFFAe4oeujI-i5gEadidVlSXTk",
+        "shortId": "ac1b10dd3f3bf790",
+        "spiderX": "/"
+      }
+    }
+  }]
+}

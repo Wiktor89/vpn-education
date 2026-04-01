@@ -1,0 +1,29 @@
+services:
+  xray:
+    image: teddysun/xray:latest
+    container_name: xray-reality-server
+    restart: always
+    network_mode: "host" # Важно для корректной работы с портами и UDP
+    volumes:
+      - ./config:/etc/xray
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+
+  wireguard:
+    image: linuxserver/wireguard:latest
+    container_name: wg-server
+    restart: always
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    network_mode: "host"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Moscow
+      - SERVERPORT=51820
+      - PEERS=1 # Создаст конфиг для одного клиента автоматически
+    volumes:
+      - ./wg-config:/config
