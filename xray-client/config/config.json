@@ -1,7 +1,7 @@
 {
   "inbounds": [{
     "port": 51821,
-    "listen": "127.0.0.1",
+    "listen": "0.0.0.0",
     "protocol": "dokodemo-door",
     "settings": {
       "address": "127.0.0.1",
