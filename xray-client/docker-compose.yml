@@ -3,9 +3,11 @@ services:
     image: teddysun/xray:latest
     container_name: xray-reality-client
     restart: no
+    ports:
+      - "51821:51821/udp"
     network_mode: "host"
     volumes:
-      - ./config:/etc/xray
+      - ./config/config.json:/etc/xray/config.json:ro
 
   wireguard-client:
     image: linuxserver/wireguard:latest
@@ -13,7 +15,6 @@ services:
     restart: no
     cap_add:
       - NET_ADMIN
-    network_mode: "host"
     environment:
       - PUID=1000
       - PGID=1000
