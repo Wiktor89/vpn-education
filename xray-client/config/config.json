@@ -1,4 +1,9 @@
 {
+  "log": {
+    "loglevel": "debug",
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log"
+  },
   "inbounds": [{
     "port": 51821,
     "listen": "0.0.0.0",
