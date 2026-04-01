@@ -2,7 +2,7 @@ services:
   xray-client:
     image: teddysun/xray:latest
     container_name: xray-reality-client
-    restart: always
+    restart: no
     network_mode: "host"
     volumes:
       - ./config:/etc/xray
@@ -10,7 +10,7 @@ services:
   wireguard-client:
     image: linuxserver/wireguard:latest
     container_name: wg-client
-    restart: always
+    restart: no
     cap_add:
       - NET_ADMIN
     network_mode: "host"
