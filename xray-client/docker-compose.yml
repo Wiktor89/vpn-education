@@ -18,4 +18,4 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ./wg-config:/config
+      - ./wg-config/wg_confs/wg0.conf:/config/wg_confs/wg0.conf:ro
