@@ -25,5 +25,10 @@ services:
       - TZ=Europe/Moscow
       - SERVERPORT=51820
       - PEERS=1 # Создаст конфиг для одного клиента автоматически
+      - ALLOWEDIPS=0.0.0.0/0
+      - PERSISTENTKEEPALIVE_PEERS=25
     volumes:
       - ./wg-config:/config
+      - /lib/modules:/lib/modules:ro
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
