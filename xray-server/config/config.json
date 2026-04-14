@@ -1,6 +1,6 @@
 {
   "log": {
-    "loglevel": "info"
+    "loglevel": "debug"
   },
   "inbounds": [{
     "port": 443,
@@ -13,12 +13,12 @@
       "network": "tcp",
       "security": "reality",
       "realitySettings": {
-        "show": false,
+        "show": true,
         "dest": "microsoft.com:443",
         "xver": 0,
         "serverNames": ["microsoft.com", "www.microsoft.com"],
-        "privateKey": "eCjSVqP42fVw48wRJt1krQKGew-kfYlavnIvJcfkkV4",
-        "shortIds": ["682f4cc661c69a81"]
+        "privateKey": "QBU0z7YhCm-qpGOmH4C5oD7WV6OwWeLolkL6YEfFCX4",
+        "shortIds": ["ac1b10dd3f3bf790"]
       }
     }
   }],
