@@ -7,7 +7,7 @@ services:
       - WG_HOST=91.188.215.79
 
       # Пароль для входа в веб-интерфейс (см. README.md)
-      - PASSWORD_HASH=$$2a$$12$$lSz4XxRB9rCod6mjNlDryuv4UJ5RKrsdhTOibZ.jhyQeKJcFG.gXK
+      - PASSWORD_HASH=$$2b$$12$$.HhU.E0gUMdnjyMQrQAi/OW0KfLPAm1.XsEsCXJ1xEc94Mq7kGXPC
 
       # Порт веб-админки c кнопкой генерации QR
       - PORT=51822
