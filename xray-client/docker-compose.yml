@@ -8,6 +8,7 @@ services:
       # WireGuard-клиент отправляет UDP трафик в этот порт докодемо-инбаунда Xray
       - "51821:51821/udp"
     volumes:
+      # Связанный файл Reality-клиента: xray-client/config/config.json
       - ./config/config.json:/etc/xray/config.json:ro
 
   wireguard-client:
@@ -21,4 +22,5 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
+      # Связанный файл WireGuard-клиента: xray-client/wg-config/wg_confs/wg0.conf
       - ./wg-config/wg_confs/wg0.conf:/config/wg_confs/wg0.conf:ro

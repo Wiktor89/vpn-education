@@ -30,5 +30,8 @@ services:
       - ALLOWEDIPS=0.0.0.0/0
       - PERSISTENTKEEPALIVE_PEERS=25
     volumes:
+      # Связанные файлы:
+      # - проект: xray-server/wg-config/
+      # - контейнер: /config/peer1/peer1.conf (публичный ключ клиента для wg-server)
       - ./wg-config:/config
       - /lib/modules:/lib/modules:ro
