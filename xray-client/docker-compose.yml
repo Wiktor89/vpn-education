@@ -4,9 +4,8 @@ services:
     image: teddysun/xray:latest
     container_name: xray-reality-client
     restart: no
-    ports:
-      # WireGuard-клиент отправляет UDP трафик в этот порт докодемо-инбаунда Xray
-      - "51821:51821/udp"
+    # Host network нужен, чтобы цепочка phone->RF->US корректно маршрутизировалась на хосте РФ.
+    network_mode: "host"
     volumes:
       # Связанный файл Reality-клиента: xray-client/config/config.json
       - ./config/config.json:/etc/xray/config.json:ro
@@ -16,6 +15,8 @@ services:
     image: linuxserver/wireguard:latest
     container_name: wg-client
     restart: no
+    # Host network нужен, чтобы интерфейс wg0 был доступен хосту для policy routing.
+    network_mode: "host"
     cap_add:
       - NET_ADMIN
     environment:
