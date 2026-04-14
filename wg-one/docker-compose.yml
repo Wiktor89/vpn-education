@@ -1,19 +1,19 @@
 services:
   wg-easy:
     image: ghcr.io/wg-easy/wg-easy
-    container_name: wg-easy
+    container_name: wg-easy-rf
     environment:
-      # ОБЯЗАТЕЛЬНО: Впишите ваш публичный IP сервера
-      - WG_HOST=91.188.212.88
+      # РФ endpoint для телефона (сканирование QR в приложении WireGuard)
+      - WG_HOST=91.188.215.79
 
-      # Пароль для входа в веб-интерфейс
+      # Пароль для входа в веб-интерфейс (см. README.md)
       - PASSWORD_HASH=$$2a$$12$$lSz4XxRB9rCod6mjNlDryuv4UJ5RKrsdhTOibZ.jhyQeKJcFG.gXK
 
-      # Опционально: порт для веб-панели (по умолчанию 51821)
-      - PORT=51821
+      # Порт веб-админки c кнопкой генерации QR
+      - PORT=51822
 
-      # Опционально: порт для VPN трафика (по умолчанию 51820)
-      - WG_PORT=51820
+      # WireGuard порт для подключения телефона
+      - WG_PORT=51823
 
       # Опционально: DNS для клиентов (например, Google или Cloudflare)
       - WG_DEFAULT_DNS=1.1.1.1,8.8.8.8
@@ -23,8 +23,8 @@ services:
     volumes:
       - ./.wg-easy:/etc/wireguard
     ports:
-      - "51820:51820/udp"
-      - "51821:51821/tcp"
+      - "51823:51823/udp"
+      - "51822:51822/tcp"
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
