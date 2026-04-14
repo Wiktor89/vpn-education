@@ -15,7 +15,7 @@
     "protocol": "vless",
     "settings": {
       "vnext": [{
-        "address": "91.188.212.88",
+        "address": "45.61.57.127",
         "port": 443,
         "users": [{
           "id": "b0859222-a888-4294-bb98-094a5ff7cd12",

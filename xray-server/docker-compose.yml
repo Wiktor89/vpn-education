@@ -1,5 +1,6 @@
 services:
   xray:
+    # Запускать на сервере в США (45.61.57.127)
     image: teddysun/xray:latest
     container_name: xray-reality-server
     restart: always
@@ -12,6 +13,7 @@ services:
         max-size: "10m"
 
   wireguard:
+    # Запускать на сервере в США (45.61.57.127)
     image: linuxserver/wireguard:latest
     container_name: wg-server
     restart: always

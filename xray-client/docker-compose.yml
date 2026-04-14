@@ -1,14 +1,17 @@
 services:
   xray-client:
+    # Запускать на российском сервере (91.188.215.79)
     image: teddysun/xray:latest
     container_name: xray-reality-client
     restart: no
     ports:
+      # WireGuard-клиент отправляет UDP трафик в этот порт докодемо-инбаунда Xray
       - "51821:51821/udp"
     volumes:
       - ./config/config.json:/etc/xray/config.json:ro
 
   wireguard-client:
+    # Запускать на российском сервере (91.188.215.79)
     image: linuxserver/wireguard:latest
     container_name: wg-client
     restart: no
