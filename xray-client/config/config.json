@@ -29,7 +29,7 @@
       "security": "reality",
       "realitySettings": {
         "fingerprint": "chrome",
-        "serverName": "microsoft.com",
+        "serverName": "www.cloudflare.com",
         "publicKey": "itgfzm-nbWeXhPkT4h89lkNOLsiCYKCDYhiir47DJGE",
         "shortId": "682f4cc661c69a81",
         "spiderX": "/"
