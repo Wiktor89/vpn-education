@@ -1,8 +1,6 @@
 {
   "log": {
-    "loglevel": "debug",
-    "access": "/var/log/xray/access.log",
-    "error": "/var/log/xray/error.log"
+    "loglevel": "debug"
   },
   "inbounds": [{
     "port": 51821,
@@ -31,7 +29,7 @@
       "security": "reality",
       "realitySettings": {
         "fingerprint": "chrome",
-        "serverName": "://microsoft.com",
+        "serverName": "microsoft.com",
         "publicKey": "195MQ5684dWa75Ca2pFFAe4oeujI-i5gEadidVlSXTk",
         "shortId": "ac1b10dd3f3bf790",
         "spiderX": "/"
